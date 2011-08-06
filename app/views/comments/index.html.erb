@@ -1,0 +1,16 @@
+<h1>Comments</h1>
+<p>This is a list of all comments for everything in descending chronological order.</p>
+<ul class="comment_index">
+  <% @comments.each do |c| %>
+    <li>
+    <%= link_to c.@user %> said <%= c.content %>
+    <%= link_to c.article, c.article.name %>
+    <% if current_user.admin? %>
+      | <%= link_to "edit", edit_article_path(c), :action => :edit,
+                                :title => "Edit #{c.heading}" %>
+      | <%= link_to "delete", c, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{c.heading}" %>                         
+    <% end %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,25 @@
+<h1>Sign up</h1>
+<div class="page_body">
+<%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %> (username for display)
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %> (private, not shared or displayed - used to show Gravatars)
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %> (must be at least 6 characters)
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Password confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+</div><!--page_body-->

@@ -1,0 +1,14 @@
+<li>
+<heading>
+  <h1><%= link_to article.heading, article %></h1>
+  <p class="article_attribution"><%= article.created_at.strftime("%B %d %Y") %>, by <%= article.user.name %></p>
+</heading>
+<article class="article_body">
+  <div class="article_text">
+  <% if article.image? %>
+	<%= image_tag article.image.url(:small) %>
+  <% end %>
+  <%= ((RedCloth.new(article.content)).to_html).html_safe %>
+  </div><!--article_text-->
+</article><!--article_body-->
+</li>

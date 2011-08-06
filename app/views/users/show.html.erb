@@ -1,0 +1,21 @@
+<div class="user_heading"><%= gravatar_for @user %><h1><%= @user.name %></h1>
+	<% unless @comments.empty? %>
+	<div class="user_comments">
+	<h2>All <% if (signed_in? && current_user==@user) %>your<% else %>this user's<% end %> comments</h2>
+	  <ul>
+	   <% for comment in @comments %>
+	     <li><%= comment.content %><span class="italic"> - Posted on <%= comment.created_at.strftime("%B %d %Y") %> about the article <%= link_to comment.article.heading, comment.article %></span></li>
+	   <% end %>
+	  </ul>
+	</div><!--user_comments-->
+	<% end %>
+</div>
+<div class="user_info">
+<% if (signed_in? && current_user.admin?) %>
+  <%= link_to "Edit this user", edit_user_path %>
+<% elsif (signed_in? && current_user==@user) %>
+  <p>This is you! You can <%= link_to "edit your profile", edit_user_path %> or <%= link_to "sign out", signout_path, :method => :delete %>.</p>
+<% else %>
+<p>This isn't you.</p>
+<% end %>
+</div><!--user_info-->

@@ -1,0 +1,41 @@
+<div class="articles">
+<header>
+  <h1><%= link_to @article.heading, @article %></h1>
+  <p class="article_attribution"><%= @article.created_at.strftime("%B %d %Y") %>, by <%= link_to @article.user.name, @article.user %></p>
+</header>
+<article class="article_body">
+  <div class="article_text">
+<% if @article.image? %>
+	<%= image_tag @article.image.url(:small) %>
+<% end %>
+  <%= ((RedCloth.new(@article.content)).to_html).html_safe %>
+  </div><!--article_text-->
+</article><!--article_body-->
+<% unless @article.tags.empty? %>
+  Posted in: <ul class="article_tags">
+				<% @article.tags.each do |tag| %>
+					<li><%= render tag %></li>
+				<% end %>
+			 </ul>
+<% end %>
+<% if (signed_in? && current_user.admin?) %>
+  <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path %></p>                  
+<% end %>
+<div class="comment_area">
+  <p id="comment_count">
+    <%= pluralize(@article.comments.count, "comment") %> - <a href="#comment_box">Add yours!</a>
+  </p>
+<% unless @article.comments.empty? %>
+  <ul>
+  <% @article.comments.each do |c| %>
+  <li class="comment">
+  <span class="comment_gravatar"><%= gravatar_for c.user %></span><p class="comment_author"><%= c.user.name %></p> <p class="comment_date"><%= c.created_at.strftime("%b %d %Y") %></p>
+  <p class="comment_body"><%= c.content %></p>
+  </li>
+<% end %>
+  </ul>
+<% end %>
+<%= render 'shared/comment_form' %>
+</div><!--comment_area-->
+</div><!--articles-->
+<%= render 'layouts/sidebar' %>

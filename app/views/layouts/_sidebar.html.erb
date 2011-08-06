@@ -1,0 +1,32 @@
+<div class="sidebar">
+<h2>Recent entries</h2>
+  <ol class="recent_entries">
+    <% @recent_articles.each do |c| %>
+    <li>
+    <%= link_to c.heading, c %>
+    </li>
+    <% end %>
+  </ol>
+<h2>Tags</h2>
+  <ul class="tags_list">
+    <% @tags.each do |t| %>
+    	<li><%= render t %></li>
+    <% end %>
+  </ul>
+<h2>Archive</h2>
+<ol class="month_names">
+<% @articles_by_month.sort.reverse.each do |monthname, articles| %>
+  <li><a href="javascript:void(0);" class="month_name_link"><%= monthname.strftime("%B %Y") %></a>
+    <ol class="month_list">
+      <% for article in articles %>
+        <li><%= link_to article.heading, article %></li>
+      <% end %>
+    </ol>
+  </li>
+<% end %>
+</ol>
+<div id="twitterfeed"> 
+	<h2>tweet</h2> 
+		<p class="jsoff">Turn on JavaScript to view my Twitter feed here.</p> 
+</div><!--twitterfeed-->
+</div><!--sidebar-->

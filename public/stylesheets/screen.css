@@ -1,0 +1,493 @@
+/* === FONTS === */
+
+/* Fontin Sans, a font by Jos Buivenga (exljbris) -> www.exljbris.nl */
+
+@font-face {
+	font-family: 'Fontin-Sans-R';
+	/*src: url('fonts/museosans_500-webfont.eot');
+	src: local('☺'), 
+	url('../fonts/museosans_500-webfont.woff') format('woff'), */
+	src:url('../fonts/Fontin_Sans_R_45b.otf') format('opentype'); 
+	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
+	font-weight: normal;
+	font-style: normal;*/
+}
+@font-face {
+	font-family: 'Fontin-Sans-I';
+	/*src: url('fonts/museosans_500-webfont.eot');
+	src: local('☺'), 
+	url('../fonts/museosans_500-webfont.woff') format('woff'), */
+	src:url('../fonts/Fontin_Sans_I_45b.otf') format('opentype'); 
+	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
+	font-weight: normal;
+	font-style: normal;*/
+}
+@font-face {
+	font-family: 'Fontin-Sans-B';
+	/*src: url('fonts/museosans_500-webfont.eot');
+	src: local('☺'), 
+	url('../fonts/museosans_500-webfont.woff') format('woff'), */
+	src:url('../fonts/Fontin_Sans_B_45b.otf') format('opentype'); 
+	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
+	font-weight: normal;
+	font-style: normal;*/
+}
+
+
+/* === BASIC STYLES === */
+
+body {
+    background: url(../images/topborder1.png) repeat-x left top;
+    background-color: #efefef;
+	font-family: "Fontin-Sans-R", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Geneva, sans-serif;
+}
+div#wrapper {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+div.main_content {
+	padding-top: 50px;
+	line-height: 2.4;
+}
+div.main_content, footer {
+	font-size: 0.88em;
+}
+p {
+	padding-bottom: 1em;
+}
+a {
+	text-decoration: none;
+	color: #1b6292;
+}
+ul {
+	list-style-type: none;
+}
+ol {
+	padding-left: 2em;
+}
+.bulleted {
+	list-style-type: disc;
+	margin-left: 2em;
+}
+.italic {
+	font-family: 'Fontin-Sans-I';
+}
+a:visited {
+	color: #565656;
+}
+a:hover {
+	border-bottom: 1px solid;
+	color: #1b6292;
+}
+h1 a:visited {
+	color: #1b6292;
+}
+h2 {
+	color: #1b6292;
+	text-transform: uppercase;
+	font-size: 1.25em;
+}
+
+/* === MAIN HEADER === */
+
+header.site_header {
+	margin-top: 55px;
+	padding-bottom: 20px;
+}
+header.site_header h1 {
+    padding-top: 15px;
+}
+header.site_header nav {
+	position: absolute;
+	top: -45px;
+	right: 0;
+}
+header.site_header nav li {
+	display: inline-block;
+	text-transform: lowercase;
+	margin-left: 3px;
+}
+header.site_header nav li a {
+	color: #fff;
+}
+header p.welcome_user {
+	position: absolute;
+	top: -45px;
+	left: 0;
+	color: #fff;
+	padding: 0 1em;
+	background-color: #1b6292;
+	text-transform: lowercase;
+}
+header p.new_article_link a {
+  	position: absolute;
+  	top: -45px;
+  	left: 17em;
+    color: #fff;
+	padding: 0 1em;
+	background-color: #1b6292;
+	text-transform: lowercase;
+	-webkit-transition-property: background-color;
+ 	-webkit-transition-duration: 1s, 1s;
+}
+header p.welcome_user a {
+	color: #fff;
+}
+header.site_header a:hover {
+	border-bottom: 0;
+}
+header.site_header nav ul li a {
+	padding: 0 1.5em;
+	color: #fff;
+	text-transform: lowercase;
+	background-color: #1b6292;
+	-webkit-transition-property: background-color;
+ 	-webkit-transition-duration: 1s, 1s;
+}
+header.site_header nav ul li a:hover, header p.new_article_link a:hover {
+	background-color: #9f2e2d;
+}
+
+
+/* === SIDEBAR === */
+
+div.sidebar {
+	width: 200px;
+	float: right;
+}
+.sidebar ol, .sidebar ul {
+	list-style-type: none;
+	padding: 1em 0;
+	border-top: 1px solid #ffffff;
+}
+div.sidebar ol ol {
+    border-top: none;
+    font-size: .9em;
+    padding-left: 1.5em;
+}
+ol.month_names {
+	list-style-type: none;
+}
+ol.month_list, ol.tags_list {
+    list-style-type: disc;
+}
+div.sidebar h2 {
+	border-bottom: 1px solid #565656;
+	text-transform: uppercase;
+}
+
+
+/* === ARTICLES === */
+
+div.articles {
+	width: 700px;
+	float: left;
+}
+div.articles h1 a:hover {
+	border-bottom: 0;
+}
+article.article_body img {
+    float: left;
+    margin: 0 20px 15px 0;
+    border: 1px solid #c3bfb5;
+}
+div.main_content h1 {
+	font: 1.5em "Fontin-Sans-R";
+	padding-bottom: .25em;
+	float: left;
+}
+#main_blog_index>li {
+	padding-bottom: 5em;
+	clear: both;
+}
+div.pagination {
+  	clear: both;
+}
+p.create_article {
+  	clear: both;
+}
+div.page_body {
+	clear: both;
+	padding: 1em 0 5em;
+}
+dt {
+	font-weight: bold;
+	padding-bottom: 1em;
+}
+dd {
+	padding-bottom: 1.5em;
+}
+.article_attribution {
+	border-bottom: 13px solid #c3bfb5;
+	color: #1b6292;
+	text-transform: lowercase;
+	float: right;
+	font: .9em "Fontin-Sans-R";
+	padding-bottom: 3px;
+}
+.article_attribution a:hover {
+	border-bottom: none;
+}
+.article_attribution a:visited {
+	color: #1b6292;
+}
+.article_body {
+	padding-top: 1.5em;
+	clear: both;
+	background-color: #fff;
+	border: 1px solid #c3bfb5;
+	moz-border-radius: 10px 0 10px 10px;
+	webkit-border-radius: 10px 0 10px 10px;
+	border-radius: 10px 0 10px 10px;
+}
+div.article_text {
+	margin: 0 30px 10px 30px;
+	font-size: .9em;
+}
+div.article_text ul {
+	list-style-type: disc;
+	margin-left: 1.5em;
+}
+div.article_text p, div.article_text ul, div.article_text ol, div.article_text dl {
+	padding-bottom: 1em;
+}
+ul.article_tags {
+	display: inline;
+	padding-left: 1em;
+}
+ul.article_tags li {
+	display: inline;
+	padding-right: 1em;
+}
+
+
+/* === FOOTER === */
+
+footer {
+	clear: both;
+}
+footer#main_footer {
+	background-color: #282828;
+	color: #fff;
+	min-height: 200px;
+	text-align: center;
+}
+div.main_footer_content {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+    padding: 30px;
+    }
+ul.footer_links {
+	margin-bottom: 40px;
+}
+ul.footer_links li {
+	list-style: none;
+	display: inline;
+	padding: 0 20px;
+	border-right: 1px solid #fff;
+	position: relative;
+}
+ul.footer_links li.right_link {
+	border: none;
+}
+ul.footer_links li a {
+	color: #fff;
+}
+ul.footer_links li a:hover {
+	border-bottom: 1px solid #fff;
+}
+
+
+/* === COMMENTS === */
+
+p#comment_count {
+	padding: 10px 10px 10px 0;
+	clear: both;
+}
+p#comment_count a:visited {
+	color: #1b6292;
+}
+li.comment, div.user_heading {
+	width: 600px;
+	background-color: #fff;
+	margin-bottom: 15px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #c3bfb5;
+	clear: both;
+	min-height: 130px;
+	overflow: hidden;
+}
+p.comment_author, div.user_heading h1 {
+	float: left;
+	margin-top: 30px;
+	font-family: 'Fontin-Sans-B';
+	padding: 0 0 0 15px;
+}
+p.comment_date {
+	font-size: 0.9em;
+	color: #565656;
+	float: right;
+	margin-top: 30px;
+	padding-right: 30px;
+}
+p.comment_body {
+	padding: 0 30px 30px 15px;
+	width: 435px;
+	float: left;
+}
+h4#comment_box_title a {
+	color: #282828;
+	border-bottom: none;
+}
+.gravatar {
+	margin: 30px 10px 10px 30px;
+	display: inline-block;
+	width: 70px;
+	float: left;
+	border: 1px solid #c3bfb5;
+}
+div.gravatar_link img.gravatar {
+	float: left;
+	margin: 0 15px 25px 0;
+}
+.user_comments {
+	clear: both;
+	margin-left: 30px;
+}
+div.actions {
+	margin-bottom: 25px;
+}
+div.user_info {
+	display: block;
+	padding: 10px;
+}
+div.user_form {
+	padding-top: 15px;
+	clear: both;
+}
+
+
+/* === ADMIN === */
+
+ul.admin_list {
+	clear: both;
+	list-style-type: disc;
+	margin-left: 1.5em;
+}
+
+
+/* === FORMS === */
+
+input, textarea {
+	padding: 5px;
+	border: 1px solid #c3bfb5;
+	outline: none;
+}
+input:focus, textarea:focus {  
+    border-color: #1b6292;  
+}
+form .actions {
+	margin-top: 10px;
+	width: 180px;
+}
+form .actions input:hover {
+	cursor: pointer;
+}
+.field_with_errors {
+	display: inline;
+}
+.field_with_errors input {
+	border: 1px solid #9f2e2d;
+}
+#error_explanation h2 {
+	text-transform: lowercase;
+	color: #9f2e2d;
+}
+#error_explanation ul {
+	list-style-type: disc;
+	margin: 0 0 2em 2em;
+}
+.flash {
+	background-color: #1B6292;
+	padding: 1em;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	margin-bottom: 3em;
+}
+textarea#comment_content {
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+
+/* === CODE STYLES === */
+
+pre  {
+	background-color: #efefef;
+	border: 1px solid #1b6292;
+}
+code {
+	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+	padding-left: 1em;
+}
+
+
+/* === TWITTER PLUGIN ===  */
+
+#twitterfeed p {
+	padding: 20px 0;
+	line-height: 2.4;
+}
+.tweettime {
+	font-family: 'Fontin-Sans-I';
+}
+
+
+/* === ABOUT PAGE === */
+
+.social_links {
+	margin-top: 10px;
+}
+.social_links li {
+	display: inline;
+	margin-right: 10px;
+}
+.social_links li a:hover {
+	border-bottom: none;
+}
+
+
+/* === STICKY FOOTER === */
+
+html, body {
+	height: 100%;
+}
+#wrapper {
+	min-height: 100%;
+}
+.main_content {
+	overflow: auto;
+	padding-bottom: 150px;
+}  /* must be same height as the footer */
+#main_footer {
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	height: 150px;
+	clear: both;
+} 
+
+/* === OPERA FIX FOR STICKY FOOTER === */
+
+body:before {
+	content: "";
+	height: 100%;
+	float: left;
+	width: 0;
+	margin-top: -32767px;
+}

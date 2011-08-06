@@ -1,0 +1,17 @@
+<h1>Articles</h1>
+<p class="create_article">Create a <a href="articles/new">new article</a>.</p>
+<h2>All articles</h2>
+<ul class="articles">
+  <% @articles.each do |c| %>
+    <li>
+    <%= c.created_at.strftime("%Y/%m/%d") %>
+    <%= link_to c.heading, c %>
+    <% if current_user.admin? %>
+      | <%= link_to "edit", edit_article_path(c), :action => :edit,
+                                :title => "Edit #{c.heading}" %>
+      | <%= link_to "delete", c, :method => :delete, :confirm => "You sure?",
+                                :title => "Delete #{c.heading}" %>                         
+    <% end %>
+    </li>
+  <% end %>
+</ul>

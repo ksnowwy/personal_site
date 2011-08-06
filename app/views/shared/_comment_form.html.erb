@@ -1,0 +1,9 @@
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+<h4 id="comment_box_title"><a id="comment_box">Add a comment</a></h4>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

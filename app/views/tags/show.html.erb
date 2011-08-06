@@ -1,0 +1,18 @@
+<heading>
+  <h1>All <%= @tag.tag_name %> posts</h1>
+</heading>
+<div class="page_body">
+<% unless @tag.articles.empty? %>
+	<ol class="month_names">
+		<% @articles_by_month.sort.reverse.each do |monthname, articles| %>
+  			<li><%= monthname.strftime("%B %Y") %>
+    			<ol class="tags_list">
+    				<% @articles.each do |article| %>
+    					<li><%= link_to article.heading, article %></li>
+  					<% end %>
+				</ol>
+  			</li>
+		<% end %>
+	</ol>
+<% end %>
+</div><!--page_body-->

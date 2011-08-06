@@ -1,0 +1,21 @@
+</div><!--main_content-->
+<footer id="main_footer">
+<div class="main_footer_content">
+  <ul class="footer_links">
+  <% if (signed_in? && current_user.admin?) %>
+    <li class="left_link"><%= link_to "Admin", admin_path %></li>
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+    <li class="right_link"><%= link_to "Sign out", signout_path, :method => :delete %></li>
+  <% elsif (signed_in? && !(current_user.admin?)) %>
+    <li class="left_link"><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+    <li class="right_link"><%= link_to "Sign out", signout_path, :method => :delete %></li>
+  <% else %>
+    <li class="left_link"><%= link_to "Sign in", signin_path %></li>
+    <li class="right_link"><%= link_to "Sign up to comment", signup_path %></li>
+  <% end %>
+  </ul>
+  <p>Copyright 2011 Kelly Smith-Holbourn</p>
+</div><!--main_footer_content-->
+</footer>

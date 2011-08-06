@@ -1,0 +1,11 @@
+<h1>Admin</h1>
+<div class="page_body">
+<% if (signed_in? && current_user.admin?) %>
+  <ul class="admin_list">
+    <li><%= link_to "Users", users_path %></li>
+    <li><%= link_to "Articles", articles_path %></li>
+  </ul>
+<% else %>
+  <p>Please <%= link_to "sign in", signin_path %> to an admin account to view the admin page.</p>
+<% end %>
+</div><!--page_body-->

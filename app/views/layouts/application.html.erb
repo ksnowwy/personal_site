@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag 'jquery-1.6.2.min', 'application', 'kstwitter' %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <%= render 'layouts/header' %>
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, :class => "flash #{key}") %>
+        <% end %> 
+      <%= yield %>
+    </div><!--wrapper-->
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+  </body>
+</html>
