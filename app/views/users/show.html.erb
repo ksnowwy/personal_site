@@ -1,10 +1,10 @@
 <div class="user_heading"><%= gravatar_for @user %><h1><%= @user.name %></h1>
 	<% unless @comments.empty? %>
 	<div class="user_comments">
-	<h2>All <% if (signed_in? && current_user==@user) %>your<% else %>this user's<% end %> comments</h2>
-	  <ul>
-	   <% for comment in @comments %>
-	     <li><%= comment.content %><span class="italic"> - Posted on <%= comment.created_at.strftime("%B %d %Y") %> about the article <%= link_to comment.article.heading, comment.article %></span></li>
+	<h2>Here's what <% if (signed_in? && current_user==@user) %>you've<% else %>this user's<% end %> said&hellip;</h2>
+	  <ul class="bulleted">
+	   <% @comments.each do |c| %>
+	     <li><span class="bold"><%= c.content %></span><span class="italic"> - Posted on <%= c.created_at.strftime("%B %d %Y") %> about the article <%= link_to c.article.heading, c.article %></span></li>
 	   <% end %>
 	  </ul>
 	</div><!--user_comments-->

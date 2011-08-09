@@ -73,6 +73,9 @@ ol {
 .italic {
 	font-family: 'Fontin-Sans-I';
 }
+.bold {
+	font-family: 'Fontin-Sans-B';
+}
 a:visited {
 	color: #565656;
 }
@@ -368,6 +371,9 @@ div.user_form {
 	padding-top: 15px;
 	clear: both;
 }
+.user_comments h2 {
+	text-transform: lowercase;
+}
 
 
 /* === ADMIN === */
@@ -377,14 +383,28 @@ ul.admin_list {
 	list-style-type: disc;
 	margin-left: 1.5em;
 }
+ul.users li {
+	clear: both;
+}
+ul.users img.gravatar {
+	margin-top: 0;
+}
 
 
 /* === FORMS === */
 
+label {
+	float: left;
+	min-width: 80px;
+}
+ul.tag_list label {
+	
+}
 input, textarea {
 	padding: 5px;
 	border: 1px solid #c3bfb5;
 	outline: none;
+	clear: both;
 }
 input:focus, textarea:focus {  
     border-color: #1b6292;  

@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :heading, :image, :tag_ids
+  attr_accessible :content, :heading, :image, :tag_ids, :tags
 
   belongs_to :user
   has_many :comments, :dependent => :destroy

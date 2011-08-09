@@ -1,20 +1,26 @@
 <%= form_for @article , :html => { :multipart => true } do |f| %>
   <div class="field">
-    <%= f.text_field :heading, :size => "60x1" %>
+	<%= f.label :heading %>
+    <%= f.text_field :heading, :size => "60x1", :placeholder => "Enter heading" %>
   </div>
   <div class="field">
-    <%= f.text_area :content, :size => "60x24" %>
-  </div>
-  <div class="field">
-    <%= f.file_field :image %>
+	<%= f.label :content %>
+    <%= f.text_area :content, :size => "60x24", :placeholder => "Write your article" %>
   </div>
   <p>You can use <a href="http://redcloth.org/hobix.com/textile/quick.html" target="_blank">Textile</a> for formatting.</p>
+  <div class="field">
+	<%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
 <h2>Tags</h2>
 <% unless @tags.empty? %>
-  <ul>
+  <ul class="tag_list">
     <% @tags.each do |tag| %>
     	<li><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag), { :id => "article_tag_ids_" + tag.id.to_s} %><%= label("article_tag_ids_" + tag.id.to_s, tag.tag_name) %></li>
   	<% end %>
+	<% fields_for @tag do |tagfield| %>
+		<%= tagfield.text_field :tag_name, :size => "60x1" %>
+	<% end %>
   </ul>
 <% end %>
   <div class="actions">
