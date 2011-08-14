@@ -1,8 +1,10 @@
+
+	<% will_paginate @articles %>
+
+<% @articles.each do |article| %>
 <li>
-<heading>
   <h1><%= link_to article.heading, article %></h1>
   <p class="article_attribution"><%= article.created_at.strftime("%B %d %Y") %>, by <%= article.user.name %></p>
-</heading>
 <article class="article_body">
   <div class="article_text">
   <% if article.image? %>
@@ -12,3 +14,4 @@
   </div><!--article_text-->
 </article><!--article_body-->
 </li>
+<% end %>

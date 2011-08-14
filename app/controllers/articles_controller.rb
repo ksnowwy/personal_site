@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_filter :admin_user, :only => [:index, :new, :create, :edit, :update, :destroy]
   
   def index
-    @articles = Article.paginate(:page => params[:page])
+    @article = Article.find(params[:id])
   end
   
   def show
@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
   
   def create
     if @article = current_user.articles.create!(params[:article])
-      @article.heading = params[:heading]
       redirect_to root_path, :flash => { :success => "Article created!" }
     else
       redirect_to "/articles/new"

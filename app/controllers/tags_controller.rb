@@ -17,10 +17,11 @@ class TagsController < ApplicationController
   end
   
   def create
-    if @tag = @article.tags.create!(params[:tag])
-      redirect_to article_path, :flash => { :success => "Tag created!" }
+    @tag = Tag.new(params[:tag])
+    if @tag.save
+      redirect_to "/articles/new", :flash => { :success => "Tag created!" }
     else
-      redirect_to "/articles/edit"
+      redirect_to root_path
     end
   end
   

@@ -263,6 +263,15 @@ ul.article_tags li {
 	display: inline;
 	padding-right: 1em;
 }
+div.pagination .disabled {
+	display: none;
+}
+div.pagination .next_page {
+	float: right;
+}
+div.pagination {
+	padding-bottom: 5em;
+}
 
 
 /* === FOOTER === */
@@ -372,7 +381,7 @@ div.user_form {
 	clear: both;
 }
 .user_comments h2 {
-	text-transform: lowercase;
+	text-transform: uppercase;
 }
 
 

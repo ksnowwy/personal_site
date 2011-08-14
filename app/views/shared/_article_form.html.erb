@@ -13,14 +13,12 @@
     <%= f.file_field :image %>
   </div>
 <h2>Tags</h2>
+<%= link_to "Add a tag", "/tags/new" %>
 <% unless @tags.empty? %>
   <ul class="tag_list">
     <% @tags.each do |tag| %>
     	<li><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag), { :id => "article_tag_ids_" + tag.id.to_s} %><%= label("article_tag_ids_" + tag.id.to_s, tag.tag_name) %></li>
   	<% end %>
-	<% fields_for @tag do |tagfield| %>
-		<%= tagfield.text_field :tag_name, :size => "60x1" %>
-	<% end %>
   </ul>
 <% end %>
   <div class="actions">

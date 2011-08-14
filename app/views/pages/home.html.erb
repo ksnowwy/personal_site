@@ -1,6 +1,7 @@
 <div class="articles">
 <ul id="main_blog_index">
-<%= render :partial => "articles/article", :collection => @articles %>
+	<%= render :partial => "articles/article" %>
 </ul>
+	<%= will_paginate @articles, :previous_label => '&laquo; Newer posts', :next_label => 'Older posts &raquo;', :page_links => false %>
 </div><!--articles-->
 <%= render 'layouts/sidebar' %>
