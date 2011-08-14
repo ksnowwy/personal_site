@@ -18,11 +18,17 @@
     <% @tags.each do |tag| %>
     	<li><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag), { :id => "article_tag_ids_" + tag.id.to_s} %><%= label("article_tag_ids_" + tag.id.to_s, tag.tag_name) %></li>
   	<% end %>
-	<% fields_for @tag do |tagfield| %>
-		<%= tagfield.text_field :tag_name, :size => "60x1" %>
-	<% end %>
   </ul>
 <% end %>
+	<div class="new_tags">
+		<%= f.fields_for :article_tags do |t| %>
+			<%= t.fields_for :tags do |ta| %>
+			<%= ta.label :tag_name, "Tag name" %>
+			<%= ta.text_field :tag_name %>
+			<% end %>
+		<% end %>
+
+	</div>
   <div class="actions">
     <%= f.submit "Submit" %>
   </div>

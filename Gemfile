@@ -6,6 +6,7 @@ gem 'will_paginate', '3.0.pre2'
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'RedCloth'
 gem 'paperclip'
+gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
 
 group :development do
   gem 'rspec-rails'

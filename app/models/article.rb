@@ -1,9 +1,11 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :heading, :image, :tag_ids, :tags
+  attr_accessible :content, :heading, :image, :tag_ids, :tags, :tag_name, :tag_attributes, :article_tags
 
   belongs_to :user
   has_many :comments, :dependent => :destroy
-  has_and_belongs_to_many :tags
+  has_many :article_tags
+  has_many :tags, :through => :article_tags
+  accepts_nested_attributes_for :tags, :reject_if => proc { |attributes| attributes['tag_name'].blank? }
   
   #validates :heading, :presence => true
   validates :content, :presence => true
@@ -15,8 +17,6 @@ class Article < ActiveRecord::Base
        :small  => "450x450>" }
     
   default_scope :order => 'articles.created_at DESC'
-  
-  accepts_nested_attributes_for :tags
   
   #def comments(params)
    # @article = Article.find(params[:id])
