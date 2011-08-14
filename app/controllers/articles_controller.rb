@@ -13,13 +13,19 @@ class ArticlesController < ApplicationController
     @title = @article.heading
     @articles_by_month = Article.all(:select => "heading, id, created_at", :order => "created_at DESC").group_by { |article| article.created_at.beginning_of_month }
     @recent_articles = Article.find(:all, :limit => 5)
-    @tags = Tag.all
+    @tags = Tag.find(:all)
   end
   
   def new
     @article = Article.new
     @tags = Tag.find(:all)
+    article_tag = @article.article_tags.build()
     @article_tags = @article.tags.all
+    @article.tags.build
+    3.times do
+        tag = @article.tags.build()
+    end
+    @tag = @article.article_tags.build(params[:tag])
   end
   
   def create

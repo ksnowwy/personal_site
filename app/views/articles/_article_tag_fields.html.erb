@@ -1,0 +1,7 @@
+<tr>
+  <td><%=h tag.tag_name %></td>
+<td>
+    <%= f.hidden_field :tag_id, :value => tag.id %>
+  </td>
+</tr>
+<%= f.label tag.tag_name %><%= f.text_field tag.tag_name %>
