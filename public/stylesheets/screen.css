@@ -407,7 +407,8 @@ label {
 	min-width: 80px;
 }
 ul.tag_list label {
-	
+	float: none;
+	padding-left: 5px;
 }
 input, textarea {
 	padding: 5px;

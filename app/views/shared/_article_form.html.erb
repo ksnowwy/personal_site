@@ -17,7 +17,7 @@
 <% unless @tags.empty? %>
   <ul class="tag_list">
     <% @tags.each do |tag| %>
-    	<li><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag), { :id => "article_tag_ids_" + tag.id.to_s} %><%= label("article_tag_ids_" + tag.id.to_s, tag.tag_name) %></li>
+    	<li><%= check_box_tag "article[tag_ids][]", tag.id, @article.tags.include?(tag), { :id => "article_tag_ids_" + tag.id.to_s + "_" + tag.tag_name } %><%= label("article_tag_ids_" + tag.id.to_s, tag.tag_name) %></li>
   	<% end %>
   </ul>
 <% end %>
