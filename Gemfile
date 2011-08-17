@@ -11,7 +11,7 @@ gem "rake", "0.8.7"
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models', '1.0.4'
-  gem 'faker', '0.3.1'
+  gem 'faker', '0.3.1', :require => false
 end
 
 group :test do
