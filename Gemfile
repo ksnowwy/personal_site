@@ -6,7 +6,6 @@ gem 'will_paginate', '3.0.pre2'
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'RedCloth'
 gem 'paperclip'
-require 'rake/dsl_definition'
 gem "rake", "0.8.7"
 
 group :development do
