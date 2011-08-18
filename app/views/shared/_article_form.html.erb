@@ -21,14 +21,6 @@
   	<% end %>
   </ul>
 <% end %>
-	<div class="new_tags">
-		<%= f.fields_for :article_tags do |t| %>
-			<%= t.fields_for :tags do |ta| %>
-			<%= ta.label :tag_name, "Tag name" %>
-			<%= ta.text_field :tag_name %>
-			<% end %>
-		<% end %>
-
 	</div>
   <div class="actions">
     <%= f.submit "Submit" %>
