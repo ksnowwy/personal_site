@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110809001412) do
+ActiveRecord::Schema.define(:version => 20110818100807) do
 
   create_table "article_tags", :force => true do |t|
     t.integer  "article_id"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20110809001412) do
   end
 
   create_table "articles", :force => true do |t|
-    t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110809001412) do
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
+    t.text     "content"
   end
 
   create_table "comments", :force => true do |t|
