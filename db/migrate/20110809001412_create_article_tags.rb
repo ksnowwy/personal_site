@@ -5,7 +5,7 @@ class CreateArticleTags < ActiveRecord::Migration
             t.integer :article_id
             t.integer :tag_id
       t.timestamps
-    drop_table :articles_tags
+    #drop_table :articles_tags
     end
   end
 
