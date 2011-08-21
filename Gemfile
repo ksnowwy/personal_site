@@ -12,6 +12,7 @@ group :development do
   gem 'rspec-rails'
   gem 'annotate-models', '1.0.4'
   gem 'faker', '0.3.1', :require => false
+  gem 'aws-s3'
 end
 
 group :test do
