@@ -12,7 +12,7 @@ class Article < ActiveRecord::Base
   validates :user_id, :presence => true
   
   has_attached_file :image,
-                    :storage => :aws,
+                    :storage => :s3,
                     :bucket => 'media.kellysmithholbourn.com',
                     :s3_credentials => {
                           :access_key_id => ENV['S3_KEY'],
