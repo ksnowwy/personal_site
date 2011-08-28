@@ -1,4 +1,4 @@
-RecipeMetrics::Application.routes.draw do |map|
+PersonalSite::Application.routes.draw do |map|
   get "projects/new"
 
   resources :users

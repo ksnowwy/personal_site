@@ -4,7 +4,7 @@ describe PagesController do
   render_views
   
   before(:each) do
-    @base_title = "Recipe Metrics"
+    @base_title = "PersonalSite PersonalSite"
   end
 
   describe "GET 'home'" do
