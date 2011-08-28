@@ -1,4 +1,4 @@
-class Article < AWS::Record::Base
+class Article < ActiveRecord::Base
   attr_accessible :content, :heading, :image, :tag_ids, :tags, :tag_name, :tag_attributes, :article_tags
 
   belongs_to :user
