@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'aws/s3'
+require 'aws-s3'
 
 AWS::S3::Base.establish_connection!(
   :access_key_id     => ENV['S3_KEY'],
