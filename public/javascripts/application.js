@@ -24,6 +24,6 @@ $(document).ready(function() {
 	
 //Min-height for posts with images
 
-	$('.article_body').has('img').css('min-height', $('img').height());
+	$('.article_body').has('img').css('min-height', ($('img').height()+60));
 
 })
