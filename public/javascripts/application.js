@@ -17,15 +17,13 @@ $(document).ready(function() {
 	$('.flash').delay(3000).fadeOut(2000, function() {
     // Animation complete.
   	});
-
-//Hide resume details
-
-  	$(".resume").find(".resume_subhead").next().hide().end().find(".resume_subhead").click(function(){
-		$(this).next().slideToggle();
-	});
 	
 //Twitter feed
 
 	$("#twitterfeed").kstwitter('ksmithholbourn', 4);
+	
+//Min-height for posts with images
+
+	$('.article_body').has('img').css('min-height', '1000px');
 
 })

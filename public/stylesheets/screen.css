@@ -272,6 +272,10 @@ div.pagination .next_page {
 div.pagination {
 	padding-bottom: 5em;
 }
+div.posted_in p {
+	padding: 0;
+	display: inline-block;
+}
 
 
 /* === FOOTER === */

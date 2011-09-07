@@ -12,11 +12,13 @@
   </div><!--article_text-->
 </article><!--article_body-->
 <% unless @article.tags.empty? %>
-  Posted in: <ul class="article_tags">
-				<% @article.tags.each do |tag| %>
-					<li><%= render tag %></li>
-				<% end %>
-			 </ul>
+<div class="posted_in">  
+  <p>Posted in:</p><ul class="article_tags">
+    <% @article.tags.each do |tag| %>
+	  <li><%= render tag %></li>
+	<% end %>
+	</ul>
+</div><!--posted_in-->
 <% end %>
 <% if (signed_in? && current_user.admin?) %>
   <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path %></p>                  
