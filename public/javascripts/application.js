@@ -21,9 +21,12 @@ $(document).ready(function() {
 //Twitter feed
 
 	$("#twitterfeed").kstwitter('ksmithholbourn', 4);
-	
+
+})
+
+$(window).load(function() {
+
 //Min-height for posts with images
 
 	$('.article_body').has('img').css('min-height', ($('.article_body').has('img').height()+51));
-
 })
