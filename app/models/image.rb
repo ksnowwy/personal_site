@@ -14,7 +14,7 @@ class Image < ActiveRecord::Base
                     :s3_credentials => {
                       :access_key_id => ENV['S3_KEY'],
                       :secret_access_key => ENV['S3_SECRET']
-                    }
+                    },
                     :styles => {
                           :thumb  => "100x100>",
                           :small  => "450x450>" 
