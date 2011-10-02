@@ -10,7 +10,7 @@ class Image < ActiveRecord::Base
   
   has_attached_file :image,
                     :storage => :s3,
-                    :bucket => 'dev.kellysmithholbourn.com',
+                    :bucket => 'media.kellysmithholbourn.com',
                     :s3_credentials => S3_CREDENTIALS,
                     :styles => {
                           :thumb  => "100x100>",
