@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818100807) do
+ActiveRecord::Schema.define(:version => 20111001022712) do
+
+  create_table "article_images", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "article_tags", :force => true do |t|
     t.integer  "article_id"
@@ -24,9 +31,6 @@ ActiveRecord::Schema.define(:version => 20110818100807) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "heading"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
     t.text     "content"
   end
 
@@ -36,6 +40,18 @@ ActiveRecord::Schema.define(:version => 20110818100807) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_id"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_alt_text"
   end
 
   create_table "tags", :force => true do |t|

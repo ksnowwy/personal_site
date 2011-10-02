@@ -5,14 +5,28 @@
   </div>
   <div class="field">
 	<%= f.label :content %>
-    <%= f.text_area :content, :size => "60x24", :placeholder => "Write your article" %>
+    <%= f.text_area :content, :size => "60x24", :placeholder => "Write your article", :id => "droppable" %>
   </div>
   <p>You can use <a href="http://redcloth.org/hobix.com/textile/quick.html" target="_blank">Textile</a> for formatting.</p>
-  <div class="field">
-	<%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-<h2>Tags</h2>
+
+<h2>Images</h2>
+<%= link_to "Add an image", "/images/new" %>
+<% unless @images.empty? %>
+<div class="demo">
+<div class="scroll-pane ui-widget ui-widget-header ui-corner-all">
+  <ul class="image_list scroll-content">
+    <% @images.each do |image| %>
+    	<li class="draggable scroll-content-item ui-widget-header" id="!<%= image.image.url %>(<%= image.image_alt_text %>)!"><div class="draggable-img"><%= image_tag image.image.url(:thumb), :alt => image.image_alt_text %><%= check_box_tag "article[image_ids][]", image.id, @article.images.include?(image), { :id => "article_image_" + image.image_alt_text } %><%= label("article_image_", image.image_alt_text) %></div></li>
+  	<% end %>
+  </ul>
+<div class="scroll-bar-wrap ui-widget-content ui-corner-bottom">
+	<div class="scroll-bar"></div>
+</div>
+</div>
+</div>
+<% end %>
+
+<h2 class="tag_list">Tags</h2>
 <%= link_to "Add a tag", "/tags/new" %>
 <% unless @tags.empty? %>
   <ul class="tag_list">
@@ -23,6 +37,6 @@
 <% end %>
 	</div>
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <%= f.submit "Publish article", :class => "button" %>
   </div>
 <% end %>

@@ -1,0 +1,11 @@
+<h1>Images</h1>
+<p class="create_article">Add a <a href="images/new">new image</a>.</p>
+<h2>All images</h2>
+<ul class="articles">
+  <% @images.each do |pic| %>
+    <li>
+    <%= pic.created_at.strftime("%Y/%m/%d") %>
+    <%= image_tag pic.image.url(:thumb), :alt => pic.image_alt_text %>
+    </li>
+  <% end %>
+</ul>

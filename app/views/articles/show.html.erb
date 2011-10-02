@@ -5,11 +5,14 @@
 </header>
 <article class="article_body">
   <div class="article_text">
-<% if @article.image? %>
-	<%= image_tag @article.image.url(:small) %>
-<% end %>
+
   <%= ((RedCloth.new(@article.content)).to_html).html_safe %>
   </div><!--article_text-->
+<div class="article-extras">
+<% if (signed_in? && current_user.admin?) %>
+  <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path %></p>                  
+<% end %>
+</div><!--article-extras-->
 </article><!--article_body-->
 <% unless @article.tags.empty? %>
 <div class="posted_in">  
@@ -20,12 +23,9 @@
 	</ul>
 </div><!--posted_in-->
 <% end %>
-<% if (signed_in? && current_user.admin?) %>
-  <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path %></p>                  
-<% end %>
 <div class="comment_area">
   <p id="comment_count">
-    <%= pluralize(@article.comments.count, "comment") %> - <a href="#comment_box">Add yours!</a>
+    <%= pluralize(@article.comments.count, "comment") %> - <% if signed_in? %><a href="#comment_box">Add yours!</a><% else %><%= link_to "Sign in", signin_path %> or <%= link_to "sign up", signup_path %> to comment<% end %>
   </p>
 <% unless @article.comments.empty? %>
   <ul>

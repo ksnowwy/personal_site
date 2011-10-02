@@ -1,4 +1,6 @@
 PersonalSite::Application.routes.draw do |map|
+  get "images/new"
+
   get "projects/new"
 
   resources :users
@@ -6,8 +8,12 @@ PersonalSite::Application.routes.draw do |map|
   resources :articles do
     resources :comments
     resources :tags
+    resources :images
   end
   resources :tags do
+    resources :articles
+  end
+  resources :images do
     resources :articles
   end
   

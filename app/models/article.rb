@@ -1,27 +1,18 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :heading, :image, :tag_ids, :tags, :tag_name, :tag_attributes, :article_tags
+  attr_accessible :content, :heading, :image, :tag_ids, :tags, :tag_name, :tag_attributes, :article_tags, :image_ids, :image_file_name, :image_attributes, :article_images, :images
 
   belongs_to :user
   has_many :comments, :dependent => :destroy
   has_many :article_tags
   has_many :tags, :through => :article_tags
   accepts_nested_attributes_for :tags, :reject_if => proc { |attributes| attributes['tag_name'].blank? }
+  has_many :article_images
+  has_many :images, :through => :article_images
+  accepts_nested_attributes_for :images, :reject_if => proc { |attributes| attributes['image_name'].blank? }, :allow_destroy => true
   
   #validates :heading, :presence => true
   validates :content, :presence => true
   validates :user_id, :presence => true
-  
-  has_attached_file :image,
-                    :storage => :s3,
-                    :bucket => 'media.kellysmithholbourn.com',
-                    :s3_credentials => {
-                          :access_key_id => ENV['S3_KEY'],
-                          :secret_access_key => ENV['S3_SECRET']
-                          },
-                    :styles => {
-                          :thumb  => "100x100>",
-                          :small  => "450x450>" 
-                          }
     
   default_scope :order => 'articles.created_at DESC'
   

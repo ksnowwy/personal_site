@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_filter :admin_user, :only => [:index, :new, :create, :edit, :update, :destroy]
   
   def index
-    @article = Article.find(params[:id])
+    @articles = Article.paginate(:page => params[:page])
+    @title = "All articles"
   end
   
   def show
@@ -14,18 +15,23 @@ class ArticlesController < ApplicationController
     @articles_by_month = Article.all(:select => "heading, id, created_at", :order => "created_at DESC").group_by { |article| article.created_at.beginning_of_month }
     @recent_articles = Article.find(:all, :limit => 5)
     @tags = Tag.find(:all)
+    @images = Image.find(:all)
   end
   
   def new
     @article = Article.new
     @tags = Tag.find(:all)
+    @images = Image.find(:all) #helps to make a catch if no images
     article_tag = @article.article_tags.build()
     @article_tags = @article.tags.all
     @article.tags.build
     3.times do
         tag = @article.tags.build()
     end
+    @article_images = @article.images.all
+    @article.images.build
     @tag = @article.article_tags.build(params[:tag])
+    @image = @article.article_images.build(params[:image])
   end
   
   def create
@@ -41,6 +47,7 @@ class ArticlesController < ApplicationController
     @title = "article"
     @tags = Tag.find(:all)
     @article_tags = @article.tags.all
+    @images = Image.find(:all)
   end
   
   def update

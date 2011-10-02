@@ -1,0 +1,16 @@
+<h1>Add an image</h1>
+<div class="page_body">
+<%= form_for @image , :html => { :multipart => true } do |image_fields| %>
+<%= render 'shared/error_messages', :object => image_fields.object %>
+  <div class="field">
+	<%= image_fields.label :image_alt_text %>
+  <%= image_fields.text_field :image_alt_text, :size => "60x1", :placeholder => "Enter alt text" %>
+  </div>
+  <div class="field">
+	<%= image_fields.file_field :image %>
+  </div>
+<div class="actions">
+  <%= image_fields.submit "Add image", :class => "button" %>
+</div>
+</div>
+<% end %>

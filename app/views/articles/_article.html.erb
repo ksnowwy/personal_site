@@ -7,11 +7,15 @@
   <p class="article_attribution"><%= article.created_at.strftime("%B %d %Y") %>, by <%= article.user.name %></p>
 <article class="article_body">
   <div class="article_text">
-  <% if article.image? %>
-	<%= image_tag article.image.url(:small) %>
-  <% end %>
+
   <%= ((RedCloth.new(article.content)).to_html).html_safe %>
   </div><!--article_text-->
+<div class="article-extras">
+<% if (signed_in? && current_user.admin?) %>
+  <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path(article) %></p>                  
+<% end %>
+  <p class="comments-link"><%= link_to pluralize(article.comments.count, "comment"), article %>
+</div><!--article-extras-->
 </article><!--article_body-->
 </li>
 <% end %>
