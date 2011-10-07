@@ -2,35 +2,53 @@
 
 /* Fontin Sans, a font by Jos Buivenga (exljbris) -> www.exljbris.nl */
 
+
 @font-face {
-	font-family: 'Fontin-Sans-R';
-	/*src: url('fonts/museosans_500-webfont.eot');
-	src: local('☺'), 
-	url('../fonts/museosans_500-webfont.woff') format('woff'), */
-	src:url('../fonts/Fontin_Sans_R_45b.otf') format('opentype'); 
-	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
-	font-weight: normal;
-	font-style: normal;*/
+    font-family: 'FontinSansRegular';
+    src: url('../fonts/fontin_sans_r_45b-webfont.eot');
+    src: url('../fonts/fontin_sans_r_45b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontin_sans_r_45b-webfont.woff') format('woff'),
+         url('../fonts/fontin_sans_r_45b-webfont.ttf') format('truetype'),
+         url('../fonts/fontin_sans_r_45b-webfont.svg#FontinSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
 @font-face {
-	font-family: 'Fontin-Sans-I';
-	/*src: url('fonts/museosans_500-webfont.eot');
-	src: local('☺'), 
-	url('../fonts/museosans_500-webfont.woff') format('woff'), */
-	src:url('../fonts/Fontin_Sans_I_45b.otf') format('opentype'); 
-	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
-	font-weight: normal;
-	font-style: normal;*/
+    font-family: 'FontinSansBold';
+    src: url('../fonts/fontin_sans_b_45b-webfont.eot');
+    src: url('../fonts/fontin_sans_b_45b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontin_sans_b_45b-webfont.woff') format('woff'),
+         url('../fonts/fontin_sans_b_45b-webfont.ttf') format('truetype'),
+         url('../fonts/fontin_sans_b_45b-webfont.svg#FontinSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
 @font-face {
-	font-family: 'Fontin-Sans-B';
-	/*src: url('fonts/museosans_500-webfont.eot');
-	src: local('☺'), 
-	url('../fonts/museosans_500-webfont.woff') format('woff'), */
-	src:url('../fonts/Fontin_Sans_B_45b.otf') format('opentype'); 
-	/*url('../fonts/museosans_500-webfont.svg#webfontpg39hrM9') format('svg');
-	font-weight: normal;
-	font-style: normal;*/
+    font-family: 'FontinSansItalic';
+    src: url('../fonts/fontin_sans_i_45b-webfont.eot');
+    src: url('../fonts/fontin_sans_i_45b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontin_sans_i_45b-webfont.woff') format('woff'),
+         url('../fonts/fontin_sans_i_45b-webfont.ttf') format('truetype'),
+         url('../fonts/fontin_sans_i_45b-webfont.svg#FontinSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FontinSansBoldItalic';
+    src: url('../fonts/fontin_sans_bi_45b-webfont.eot');
+    src: url('../fonts/fontin_sans_bi_45b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fontin_sans_bi_45b-webfont.woff') format('woff'),
+         url('../fonts/fontin_sans_bi_45b-webfont.ttf') format('truetype'),
+         url('../fonts/fontin_sans_bi_45b-webfont.svg#FontinSansBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 
@@ -39,7 +57,7 @@
 body {
     background: url(../images/topborder1.png) repeat-x left top;
     background-color: #efefef;
-	font-family: "Fontin-Sans-R", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Geneva, sans-serif;
+	font-family: "FontinSansRegular", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Geneva, sans-serif;
 }
 div#wrapper {
     width: 960px;
@@ -71,10 +89,10 @@ ol {
 	margin-left: 2em;
 }
 .italic {
-	font-family: 'Fontin-Sans-I';
+	font-family: 'FontinSansItalic';
 }
 .bold {
-	font-family: 'Fontin-Sans-B';
+	font-family: 'FontinSansBold';
 }
 a:visited {
 	color: #565656;
@@ -196,7 +214,7 @@ article.article_body img {
     border: 1px solid #c3bfb5;
 }
 div.main_content h1 {
-	font: 1.5em "Fontin-Sans-R";
+	font: 1.5em "FontinSansRegular";
 	padding-bottom: .25em;
 	float: left;
 }
@@ -226,7 +244,7 @@ dd {
 	color: #1b6292;
 	text-transform: lowercase;
 	float: right;
-	font: .9em "Fontin-Sans-R";
+	font: .9em "FontinSansRegular";
 	padding-bottom: 3px;
 }
 .article_attribution a:hover {
@@ -343,7 +361,7 @@ li.comment, div.user_heading {
 p.comment_author, div.user_heading h1 {
 	float: left;
 	margin-top: 30px;
-	font-family: 'Fontin-Sans-B';
+	font-family: 'FontinSansBold';
 	padding: 0 0 0 15px;
 }
 p.comment_date {
@@ -483,7 +501,7 @@ code {
 	line-height: 2.4;
 }
 .tweettime {
-	font-family: 'Fontin-Sans-I';
+	font-family: 'FontinSansItalic';
 }
 
 
