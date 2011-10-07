@@ -455,6 +455,9 @@ form .actions input:hover {
 .field_with_errors {
 	display: inline;
 }
+.fixed_field {
+	display: inline;
+}
 .field_with_errors input {
 	border: 1px solid #9f2e2d;
 }

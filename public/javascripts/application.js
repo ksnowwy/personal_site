@@ -9,7 +9,7 @@ $(document).ready(function() {
 //Form error indicators
 
 	$(".field_with_errors").find("input").focus(function(){
-		$(this).parent().removeClass();
+		$(this).parent().removeClass().addClass("fixed_field");
 	});
 	
 //Fadeout flash
