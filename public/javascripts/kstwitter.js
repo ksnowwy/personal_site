@@ -25,9 +25,9 @@ function relative_time(time_value) {
 
 
 (function( $ ){
-		
+
   $.fn.kstwitter = function( username, tweetnumber ) {
-  	  
+
   	  return this.each(function() {
   	  		  var $this = $(this);
 
@@ -49,7 +49,6 @@ function relative_time(time_value) {
 					  		  var cleandate = relative_time(date);
 					  		  
 					  		  tweet = tweet.replace(/http:\/\/\S+/g,'<a href="$&" target="_blank">$&</a>');
-						
 						$this.append("<p><span class='username'><a href='http://twitter.com/"+username+"'>"+username+": </a></span>"+tweet.toString()+" <span class='tweettime'>"+cleandate.toString()+"</span></p>");
 					
 					  });

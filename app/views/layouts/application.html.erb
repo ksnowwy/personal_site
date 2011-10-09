@@ -6,9 +6,9 @@
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
 	<%= javascript_include_tag :defaults %>
-    <%= javascript_include_tag 'jquery-1.6.2.min', 'application', 'jquery-ui-1.8.16.custom.min', 'kstwitter', 'nested_form', 'jquery-ui-slider' %>
+    <%= javascript_include_tag 'jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min', 'kstwitter', 'nested_form', 'jquery-ui-slider' %>
   </head>
-  <body>
+  <body class="jsoff">
     <div id="wrapper">
       <%= render 'layouts/header' %>
         <% flash.each do |key, value| %>
