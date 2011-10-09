@@ -10,7 +10,7 @@
       | <%= link_to "edit", edit_article_path(c), :action => :edit,
                                 :title => "Edit #{c.heading}" %>
       | <%= link_to "delete", c, :method => :delete, :confirm => "You sure?",
-                                :title => "Delete #{c.heading}" %>                         
+								:title => "Delete #{c.heading}" %>                         
     <% end %>
     </li>
   <% end %>

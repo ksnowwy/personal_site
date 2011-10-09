@@ -61,13 +61,10 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def delete
-    @article = Article.find(params[:id])
-    if @article.destroy(params[:id])
-      redirect_to root_path, :flash => { :success => "Article deleted." }
-    else
-      redirect_to root_path
-    end
+  def destroy
+      Article.find(params[:id]).destroy
+      flash[:success] = "Article destroyed."
+      redirect_to articles_path
   end
   
   def commenter
