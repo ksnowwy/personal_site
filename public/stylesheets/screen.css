@@ -130,44 +130,68 @@ header.site_header nav li {
 	margin-left: 3px;
 }
 header.site_header nav li a {
-	color: #fff;
+	color: #676154;
 }
 header p.welcome_user {
 	position: absolute;
 	top: -45px;
 	left: 0;
-	color: #fff;
-	padding: 0 1em;
-	background-color: #1b6292;
+	padding: 3px 10px;
+	color: #676154;
 	text-transform: lowercase;
+	text-shadow: 0px 1px 2px #fff;
+	font: 1.2em "FontinSansBold";
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+header p.welcome_user a {
+	padding: 3px 5px;
+	color: #676154;
+	text-transform: lowercase;
+	text-shadow: 0px 1px 2px #fff;
+	font: "FontinSansBold";
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 header p.new_article_link a {
   	position: absolute;
   	top: -45px;
   	left: 17em;
-    color: #fff;
-	padding: 0 1em;
-	background-color: #1b6292;
+	padding: 3px 5px;
+	color: #676154;
 	text-transform: lowercase;
-	-webkit-transition-property: background-color;
- 	-webkit-transition-duration: 1s, 1s;
-}
-header p.welcome_user a {
-	color: #fff;
+	text-shadow: 0px 1px 2px #fff;
+	font: 1.2em "FontinSansBold";
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 header.site_header a:hover {
 	border-bottom: 0;
 }
 header.site_header nav ul li a {
-	padding: 0 1.5em;
-	color: #fff;
-	text-transform: lowercase;
-	background-color: #1b6292;
-	-webkit-transition-property: background-color;
- 	-webkit-transition-duration: 1s, 1s;
+	padding: 3px 10px;
+	margin-left: 7px;
+	color: #676154;
+	text-transform: uppercase;
+	text-shadow: 0px 1px 2px #fff;
+	font: 1.2em "FontinSansBold";
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
+	border-radius: 10px;
 }
-header.site_header nav ul li a:hover, header p.new_article_link a:hover {
-	background-color: #9f2e2d;
+header.site_header nav ul li a:hover, header p.new_article_link a:hover, header p.welcome_user a:hover {
+	background-color: #b4afa3;
+	border-bottom: 1px solid #676154;
+}
+header.site_header nav ul li a.active-link {
+	background-color: #efefef;
+	color: #1B6292;
+}
+header.site_header nav ul li a.active-link:hover {
+	border-bottom: none;
 }
 
 
@@ -287,8 +311,14 @@ div.pagination .disabled {
 div.pagination .next_page {
 	float: right;
 }
+div.pagination .previous_page {
+	width: 350px;
+}
 div.pagination {
 	padding-bottom: 5em;
+}
+div.pagination a:hover {
+	border-bottom: none;
 }
 div.posted_in p {
 	padding: 0;

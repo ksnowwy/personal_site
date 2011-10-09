@@ -30,8 +30,26 @@ $(document).ready(function() {
 	$('#droppable').droppable( {
 		drop: handleDropEvent
 	});
+	
+//Current page button
 
-})
+	var url = window.location.pathname;
+	if(url != "/") 
+	{
+	        urlRegExp = new RegExp(url.replace(/\/$/,'') + "$");
+	        $('.site_header nav ul li a').each(function()
+			{
+	            if(urlRegExp.test(this.href.replace(/\/$/,'')))
+				{
+	                $(this).addClass('active-link');
+	            }
+	        });
+	}
+	else if(url == "/") {
+		$('.home-link').addClass('active-link');
+
+	}
+});
 
 $(window).load(function() {
 
@@ -43,6 +61,8 @@ $(window).load(function() {
 	
 })
 
+//Image selection
+
 function picHelper( event ) {
   return '<div id="draggable-helper">Drop me where you want the image!</div>';
 }
@@ -53,4 +73,3 @@ function handleDropEvent( event, ui ) {
   $(draggable).find(':checkbox').prop("checked", true);
   $('#droppable').val(currentText + draggable.attr('id'));
 }
-
