@@ -14,7 +14,6 @@
 <% if (signed_in? && current_user.admin?) %>
   <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path(article) %></p>                  
 <% end %>
-  <p class="comments-link"><%= link_to pluralize(article.comments.count, "comment"), article %>
 </div><!--article-extras-->
 </article><!--article_body-->
 </li>

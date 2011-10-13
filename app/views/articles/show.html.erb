@@ -24,20 +24,6 @@
 </div><!--posted_in-->
 <% end %>
 <div class="comment_area">
-  <p id="comment_count">
-    <%= pluralize(@article.comments.count, "comment") %> - <% if signed_in? %><a href="#comment_box">Add yours!</a><% else %><%= link_to "Sign in", signin_path %> or <%= link_to "sign up", signup_path %> to comment<% end %>
-  </p>
-<% unless @article.comments.empty? %>
-  <ul>
-  <% @article.comments.each do |c| %>
-  <li class="comment">
-  <span class="comment_gravatar"><%= gravatar_for c.user %></span><p class="comment_author"><%= c.user.name %></p> <p class="comment_date"><%= c.created_at.strftime("%b %d %Y") %></p>
-  <p class="comment_body"><%= c.content %></p>
-  </li>
-<% end %>
-  </ul>
-<% end %>
-<%= render 'shared/comment_form' %>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
