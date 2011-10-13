@@ -71,16 +71,16 @@ body {
     background-color: #efefef;
 	font-family: "FontinSansRegular", "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS", Geneva, sans-serif;
 }
-div#wrapper {
+#wrapper {
     width: 960px;
     margin: 0 auto;
     position: relative;
 }
-div.main_content {
+.main_content {
 	padding-top: 50px;
 	line-height: 2.4;
 }
-div.main_content, footer {
+.main_content, footer {
 	font-size: 0.88em;
 }
 p {
@@ -124,51 +124,46 @@ h2 {
 
 /* === MAIN HEADER === */
 
-header.site_header {
+.site_header {
 	margin-top: 55px;
 	padding-bottom: 20px;
 }
-header.site_header h1 {
+.site_header h1 {
     padding-top: 15px;
 }
-header.site_header nav {
+.site_header nav {
 	position: absolute;
 	top: -45px;
 	right: 0;
 }
-header.site_header nav li {
+.site_header nav li {
 	display: inline-block;
 	text-transform: lowercase;
 	margin-left: 3px;
 	padding-top: 3px;
+	*display: inline; /* ie6/7 */
+    zoom: 1; /* ie6/7 */
 }
-header.site_header nav li a {
+.site_header nav li a {
 	color: #676154;
 }
-header p.welcome_user {
-	position: absolute;
-	top: -45px;
-	left: 0;
-	padding: 3px 10px 3px 0px;
+#title-font {
+	font-family: "JournalRegular";
+	text-transforzm: lowercase;
+	color: #1b6292;
+	font-size: 3em;
+	padding-top: 20px;
+}
+.site_header h2 {
+	font-size:1.05em;
+	font-weight: normal;
 	color: #676154;
+	margin: 10px 0;
 	text-transform: lowercase;
 	text-shadow: 0px 1px 2px #fff;
-	font: 1.2em "FontinSansBold";
-	moz-border-radius: 10px;
-	webkit-border-radius: 10px;
-	border-radius: 10px;
+
 }
-header p.welcome_user a {
-	padding: 3px 5px;
-	color: #676154;
-	text-transform: lowercase;
-	text-shadow: 0px 1px 2px #fff;
-	font: "FontinSansBold";
-	moz-border-radius: 10px;
-	webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-header p.new_article_link a {
+header .new_article_link a {
   	position: absolute;
   	top: -45px;
   	left: 17em;
@@ -181,10 +176,10 @@ header p.new_article_link a {
 	webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-header.site_header a:hover {
+.site_header a:hover {
 	border-bottom: 0;
 }
-header.site_header nav ul li a {
+.site_header nav ul li a {
 	padding: 3px 10px;
 	margin-left: 7px;
 	color: #676154;
@@ -195,22 +190,22 @@ header.site_header nav ul li a {
 	webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-header.site_header nav ul li a:hover, header p.new_article_link a:hover, header p.welcome_user a:hover {
+.site_header nav ul li a:hover {
 	background-color: #b4afa3;
 	border-bottom: 1px solid #676154;
 }
-header.site_header nav ul li a.active-link {
+.site_header nav ul li a.active-link {
 	background-color: #efefef;
 	color: #1B6292;
 }
-header.site_header nav ul li a.active-link:hover {
+.site_header nav ul li a.active-link:hover {
 	border-bottom: none;
 }
 
 
 /* === SIDEBAR === */
 
-div.sidebar {
+.sidebar {
 	width: 200px;
 	float: right;
 }
@@ -219,18 +214,18 @@ div.sidebar {
 	padding: 1em 0;
 	border-top: 1px solid #ffffff;
 }
-div.sidebar ol ol {
+.sidebar ol ol {
     border-top: none;
     font-size: .9em;
     padding-left: 1.5em;
 }
-ol.month_names {
+.month_names {
 	list-style-type: none;
 }
-ol.month_list, ol.tags_list {
+.month_list, .tags_list {
     list-style-type: disc;
 }
-div.sidebar h2 {
+.sidebar h2 {
 	border-bottom: 1px solid #565656;
 	text-transform: uppercase;
 }
@@ -238,19 +233,19 @@ div.sidebar h2 {
 
 /* === ARTICLES === */
 
-div.articles {
+.articles {
 	width: 700px;
 	float: left;
 }
-div.articles h1 a:hover {
+.articles h1 a:hover {
 	border-bottom: 0;
 }
-article.article_body img {
+.article_body img {
     float: left;
     margin: 0 20px 15px 0;
     border: 1px solid #c3bfb5;
 }
-div.main_content h1 {
+.main_content h1 {
 	font: 1.5em "FontinSansRegular";
 	padding-bottom: .25em;
 	float: left;
@@ -259,13 +254,13 @@ div.main_content h1 {
 	padding-bottom: 5em;
 	clear: both;
 }
-div.pagination {
+.pagination {
   	clear: both;
 }
-p.create_article {
+.create_article {
   	clear: both;
 }
-div.page_body {
+.page_body {
 	clear: both;
 	padding: 1em 0 5em;
 }
@@ -299,41 +294,41 @@ dd {
 	webkit-border-radius: 10px 0 10px 10px;
 	border-radius: 10px 0 10px 10px;
 }
-div.article_text {
+.article_text {
 	margin: 0 30px 10px 30px;
 	font-size: .9em;
 }
-div.article_text ul {
+.article_text ul {
 	list-style-type: disc;
 	margin-left: 1.5em;
 }
-div.article_text p, div.article_text ul, div.article_text ol, div.article_text dl {
+.article_text p, .article_text ul, .article_text ol, .article_text dl {
 	padding-bottom: 1em;
 }
-ul.article_tags {
+.article_tags {
 	display: inline;
 	padding-left: 1em;
 }
-ul.article_tags li {
+.article_tags li {
 	display: inline;
 	padding-right: 1em;
 }
-div.pagination .disabled {
+.pagination .disabled {
 	display: none;
 }
-div.pagination .next_page {
+.pagination .next_page {
 	float: right;
 }
-div.pagination .previous_page {
+.pagination .previous_page {
 	width: 350px;
 }
-div.pagination {
+.pagination {
 	padding-bottom: 5em;
 }
-div.pagination a:hover {
+.pagination a:hover {
 	border-bottom: none;
 }
-div.posted_in p {
+.posted_in p {
 	padding: 0;
 	display: inline-block;
 }
@@ -348,49 +343,49 @@ div.posted_in p {
 footer {
 	clear: both;
 }
-footer#main_footer {
+#main_footer {
 	background-color: #282828;
 	color: #fff;
 	min-height: 200px;
 	text-align: center;
 }
-div.main_footer_content {
+.main_footer_content {
     width: 960px;
     margin: 0 auto;
     position: relative;
     padding: 30px;
     }
-ul.footer_links {
+.footer_links {
 	margin-bottom: 40px;
 }
-ul.footer_links li {
+.footer_links li {
 	list-style: none;
 	display: inline;
 	padding: 0 20px;
 	border-right: 1px solid #fff;
 	position: relative;
 }
-ul.footer_links li.right_link {
+.footer_links .right_link {
 	border: none;
 }
-ul.footer_links li a {
+.footer_links li a {
 	color: #fff;
 }
-ul.footer_links li a:hover {
+.footer_links li a:hover {
 	border-bottom: 1px solid #fff;
 }
 
 
 /* === COMMENTS === */
 
-p#comment_count {
+#comment_count {
 	padding: 10px 10px 10px 0;
 	clear: both;
 }
-p#comment_count a:visited {
+#comment_count a:visited {
 	color: #1b6292;
 }
-li.comment, div.user_heading {
+.comment, .user_heading {
 	width: 600px;
 	background-color: #fff;
 	margin-bottom: 15px;
@@ -401,25 +396,25 @@ li.comment, div.user_heading {
 	min-height: 130px;
 	overflow: hidden;
 }
-p.comment_author, div.user_heading h1 {
+.comment_author, .user_heading h1 {
 	float: left;
 	margin-top: 30px;
 	font-family: 'FontinSansBold';
 	padding: 0 0 0 15px;
 }
-p.comment_date {
+.comment_date {
 	font-size: 0.9em;
 	color: #565656;
 	float: right;
 	margin-top: 30px;
 	padding-right: 30px;
 }
-p.comment_body {
+.comment_body {
 	padding: 0 30px 30px 15px;
 	width: 435px;
 	float: left;
 }
-h4#comment_box_title a {
+#comment_box_title a {
 	color: #282828;
 	border-bottom: none;
 }
@@ -430,7 +425,7 @@ h4#comment_box_title a {
 	float: left;
 	border: 1px solid #c3bfb5;
 }
-div.gravatar_link img.gravatar {
+.gravatar_link img.gravatar {
 	float: left;
 	margin: 0 15px 25px 0;
 }
@@ -438,14 +433,14 @@ div.gravatar_link img.gravatar {
 	clear: both;
 	margin-left: 30px;
 }
-div.actions {
+.actions {
 	margin-bottom: 25px;
 }
-div.user_info {
+.user_info {
 	display: block;
 	padding: 10px;
 }
-div.user_form {
+.user_form {
 	padding-top: 15px;
 	clear: both;
 }
@@ -456,15 +451,15 @@ div.user_form {
 
 /* === ADMIN === */
 
-ul.admin_list {
+.admin_list {
 	clear: both;
 	list-style-type: disc;
 	margin-left: 1.5em;
 }
-ul.users li {
+.users li {
 	clear: both;
 }
-ul.users img.gravatar {
+.users img.gravatar {
 	margin-top: 0;
 }
 
@@ -475,7 +470,7 @@ label {
 	float: left;
 	min-width: 80px;
 }
-ul.tag_list label {
+.tag_list label {
 	float: none;
 	padding-left: 5px;
 }
@@ -520,7 +515,7 @@ form .actions input:hover {
 	border: 1px solid white;
 	margin-bottom: 3em;
 }
-textarea#comment_content {
+#comment_content {
 	moz-border-radius: 10px;
 	webkit-border-radius: 10px;
 	border-radius: 10px;
@@ -674,19 +669,3 @@ body:before {
 .scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
 
 
-#title-font {
-	font-family: "JournalRegular";
-	text-transforzm: lowercase;
-	color: #1b6292;
-	font-size: 3em;
-	padding-top: 20px;
-}
-.site_header h2 {
-	font-size:1.05em;
-	font-weight: normal;
-	color: #676154;
-	margin: 10px 0;
-	text-transform: lowercase;
-	text-shadow: 0px 1px 2px #fff;
-
-}
