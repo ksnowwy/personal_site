@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # Return a title on a per-page basis.
   def title
-    base_title = "Kelly Smith-Holbourn"
+    base_title = "Morning-Water-196"
     if @title.nil?
       base_title
     else
