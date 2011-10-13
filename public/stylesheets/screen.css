@@ -222,8 +222,8 @@ header .new_article_link a {
 .month_names {
 	list-style-type: none;
 }
-.month_list, .tags_list {
-    list-style-type: disc;
+ol.month_list, .tags_list {
+    list-style-type: circle;
 }
 .sidebar h2 {
 	border-bottom: 1px solid #565656;
