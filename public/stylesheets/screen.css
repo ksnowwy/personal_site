@@ -127,6 +127,7 @@ h2 {
 .site_header {
 	margin-top: 55px;
 	padding-bottom: 20px;
+	position: relative;
 }
 .site_header h1 {
     padding-top: 15px;
@@ -162,19 +163,6 @@ h2 {
 	text-transform: lowercase;
 	text-shadow: 0px 1px 2px #fff;
 
-}
-header .new_article_link a {
-  	position: absolute;
-  	top: -45px;
-  	left: 17em;
-	padding: 3px 5px;
-	color: #676154;
-	text-transform: lowercase;
-	text-shadow: 0px 1px 2px #fff;
-	font: 1.2em "FontinSansBold";
-	moz-border-radius: 10px;
-	webkit-border-radius: 10px;
-	border-radius: 10px;
 }
 .site_header a:hover {
 	border-bottom: 0;
@@ -223,7 +211,7 @@ header .new_article_link a {
 	list-style-type: none;
 }
 ol.month_list, .tags_list {
-    list-style-type: circle;
+    list-style-type: disc;
 }
 .sidebar h2 {
 	border-bottom: 1px solid #565656;
