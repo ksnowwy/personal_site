@@ -37,8 +37,7 @@ function relative_time(time_value) {
 			  
 			  var settings = {count: tweetnumber};
 			  
-			  var url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name="+username+"&count="+settings.count;
-			alert(url);
+			  var url = "http://twitter.com/statuses/user_timeline.json?screen_name="+username+"&count="+settings.count+"&callback=?";
 			  
 			  $.getJSON(url,
 				  
@@ -49,7 +48,7 @@ function relative_time(time_value) {
 					  		  var date = item.created_at;
 					  		  var cleandate = relative_time(date);
 					  		  
-					  		  tweet = tweet.replace(/http:\/\/\S+/g,'<a href="$&" target="_blank">$&</a>');
+					  		  tweet = tweet.replace(/https:\/\/\S+/g,'<a href="$&" target="_blank">$&</a>');
 						$this.append("<p><span class='username'><a href='http://twitter.com/"+username+"'>"+username+": </a></span>"+tweet.toString()+" <span class='tweettime'>"+cleandate.toString()+"</span></p>");
 					
 					  });
