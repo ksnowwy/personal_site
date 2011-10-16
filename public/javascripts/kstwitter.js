@@ -31,7 +31,7 @@ function relative_time(time_value) {
   	  return this.each(function() {
   	  		  var $this = $(this);
 
-		  $(".jsoff").css("display","none"); //hide the message about the twitter feed if feed is visible
+		  $(".jsoff").css("display","none"); //hide the message about the twitter feed if JavaScript is on
 		  
 		  if ( username && tweetnumber ) {
 			  

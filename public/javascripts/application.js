@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-//Remove class jsoff if JavaScript on
-
-	$("body").removeClass("jsoff");
-
 //Show hide for month menu
 
   	$(".month_names").find(".month_list").hide().end().find(".month_name_link").click(function(){
