@@ -14,7 +14,7 @@
 <% if (signed_in? && current_user.admin?) %>
   <p class="edit_article_link"><%= link_to "Edit this article", edit_article_path(article) %></p>                  
 <% end %>
-<p><%= link_to article.heading, article_path(article, :anchor => "disqus_thread") %></p>
+<p><%= link_to article.heading, article_path(article, :anchor => "disqus_thread", "data-disqus-identifier" => article.id) %></p>
 </div><!--article-extras-->
 </article><!--article_body-->
 </li>
