@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<meta charset="UTF-8">
-    <title><%= title %></title>
-    <%= csrf_meta_tag %>
-    <%= render 'layouts/stylesheets' %>
-    <%= javascript_include_tag 'jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min', 'kstwitter', 'jquery-ui-slider', 'modernizr.custom.78150', 'application.js', 'rails.js' %>
-	<script type="text/javascript">
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <style type="text/css">
+    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+    h1 { font-size: 100%; color: #1b6292; line-height: 1.5em; }
+  </style>
+</head>
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-16245372-4']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
-  </head>
-  <body>
-    <div id="wrapper">
-      <%= render 'layouts/header' %>
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, :class => "flash #{key}") %>
-        <% end %> 
-      <h1>404</h1>
-		<p>The page you were looking for doesn't exist.</p>
-    </div><!--wrapper-->
-      <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
-  </body>
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <h1>The page you were looking for doesn't exist.</h1>
+    <p>You may have mistyped the address or the page may have moved.</p>
+  </div>
+</body>
 </html>
