@@ -515,6 +515,9 @@ form .actions input:hover {
 pre  {
 	background-color: #efefef;
 	border: 1px solid #1b6292;
+	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+	padding-left: 1em;
 }
 code {
 	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
