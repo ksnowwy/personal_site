@@ -38,6 +38,7 @@ function relative_time(time_value) {
 			  var settings = {count: tweetnumber};
 			  
 			  var url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name="+username+"&count="+settings.count;
+			alert(url);
 			  
 			  $.getJSON(url,
 				  
