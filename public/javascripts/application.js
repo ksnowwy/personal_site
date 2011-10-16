@@ -20,7 +20,7 @@ $(document).ready(function() {
 	
 //Twitter feed
 
-	$("#twitterfeed").kstwitter('ksmithholbourn', 3);
+	$("#twitterfeed").kstwitter('ksmithholbourn', 4);
 	
 //Draggable
 
