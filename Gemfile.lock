@@ -29,7 +29,6 @@ GEM
       activemodel (= 3.0.5)
       activesupport (= 3.0.5)
     activesupport (3.0.5)
-    annotate-models (1.0.4)
     arel (2.0.10)
     aws-s3 (0.6.2)
       builder
@@ -110,7 +109,6 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  annotate-models (= 1.0.4)
   aws-s3
   factory_girl_rails (= 1.0)
   faker (= 0.3.1)

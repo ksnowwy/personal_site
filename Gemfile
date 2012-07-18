@@ -11,7 +11,6 @@ gem 'aws-s3', :require => 'aws/s3'
 
 group :development do
   gem 'rspec-rails'
-  gem 'annotate-models', '1.0.4'
   gem 'faker', '0.3.1', :require => false
 
 end
